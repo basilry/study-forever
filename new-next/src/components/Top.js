@@ -1,7 +1,14 @@
+import { Header } from "semantic-ui-react";
+import Gnb from "./Gnb";
+
 export default function Top() {
   return (
     <div>
-      로고, 텍스트, gnb
+      <div style={{display: "flex"}}>
+        <img src="/favicon.ico" style={{width: 80, margin: "20px"}} />
+        <Header as="h1" style={{marginTop: "50px"}}>바실리</Header>
+      </div>
+      <Gnb />
     </div>
-  )
+  );
 }
