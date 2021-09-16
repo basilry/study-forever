@@ -11,8 +11,7 @@ export default function Home() {
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const API_URL =
-    "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
 
   function getData() {
     axios.get(API_URL).then((res) => {
@@ -29,7 +28,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Home | 바실리</title>
+        <title>Home | 잔나비</title>
       </Head>
       {isLoading ? (
         <div style={{ padding: "300px 0" }}>

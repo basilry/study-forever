@@ -6,7 +6,7 @@ export default function Top() {
     <div>
       <div style={{display: "flex"}}>
         <img src="/favicon.ico" style={{width: 80, margin: "20px"}} />
-        <Header as="h1" style={{marginTop: "50px"}}>바실리</Header>
+        <Header as="h1" style={{marginTop: "50px"}}>잔나비</Header>
       </div>
       <Gnb />
     </div>
