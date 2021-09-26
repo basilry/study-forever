@@ -30,13 +30,6 @@ export default function Home() {
       <Head>
         <title>Home | 잔나비</title>
       </Head>
-      {isLoading ? (
-        <div style={{ padding: "300px 0" }}>
-          <Loader inline="centered" active>
-            Loading
-          </Loader>
-        </div>
-      ) : (
         <>
           <Header as="h3" style={{ paddingTop: 40 }}>
             베스트 상품
@@ -49,7 +42,20 @@ export default function Home() {
           <Divider />
           <ItemList list={list.slice(9)} />
         </>
-      )}
     </div>
   );
+}
+
+
+export async function getStaticProps() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await axios.get(apiUrl);
+  const data = res.data;
+
+  return {
+    props: {
+      item: data,
+      name: process.env.name
+    }
+  }
 }
