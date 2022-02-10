@@ -1,17 +1,17 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
+import ReduxContext from "./contexts/ReduxContext"
 import store from "./redux/store"
-import {addTodo, completeTodo, showComplete} from "./redux/actions"
+// import {addTodo, completeTodo, showComplete} from "./redux/actions"
 
+// store.subscribe(() => {
+//     console.log(store.getState())
+// });
 
-store.subscribe(() => {
-    console.log(store.getState())    
-});
-
-store.dispatch(addTodo("할일"))
-store.dispatch(completeTodo(0))
-store.dispatch(showComplete())
+// store.dispatch(addTodo("할일"))
+// store.dispatch(completeTodo(0))
+// store.dispatch(showComplete())
 
 // console.log(store)
 // console.log(store.getState())
@@ -28,7 +28,9 @@ store.dispatch(showComplete())
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <ReduxContext.Provider value={store}>
+            <App />
+        </ReduxContext.Provider>
     </React.StrictMode>,
     document.getElementById("root")
 )
