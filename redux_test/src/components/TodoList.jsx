@@ -3,9 +3,9 @@ import todos from "../redux/reducers/todos"
 
 export default function TodoList() {
 
-    const state =useReduxState()
+    const state = useReduxState()
 
-    return <ul>{state.todos.map(() => {
-        return <li>{todos.text}</li>
+    return <ul>{state.todos.map((todo) => {
+        return <li>{todo.text}</li>
     })}</ul>
 }
