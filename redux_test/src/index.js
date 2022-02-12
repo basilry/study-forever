@@ -1,8 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
-import ReduxContext from "./contexts/ReduxContext"
+// import ReduxContext from "./contexts/ReduxContext"
 import store from "./redux/store"
+import {Provider} from "react-redux"
+
 // import {addTodo, completeTodo, showComplete} from "./redux/actions"
 
 // store.subscribe(() => {
@@ -28,9 +30,9 @@ import store from "./redux/store"
 
 ReactDOM.render(
     <React.StrictMode>
-        <ReduxContext.Provider value={store}>
+        <Provider store={store}>
             <App />
-        </ReduxContext.Provider>
+        </Provider>
     </React.StrictMode>,
     document.getElementById("root")
 )
